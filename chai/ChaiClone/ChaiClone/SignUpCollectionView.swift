@@ -19,14 +19,6 @@ final class SignUpCollectionView: UICollectionView {
     setupView()
     setupFlowLayout()
     setupConstraints()
-    
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//      self.borderView.fadeIn()
-//    }
-//    
-//    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-//      self.borderView.fadeOut()
-//    }
   }
   
   required init?(coder: NSCoder) {
@@ -49,12 +41,27 @@ final class SignUpCollectionView: UICollectionView {
   
   func moveBorderView(to frame: CGRect) {
     borderViewConstraint.constant = frame.origin.y
-    UIView.animate(withDuration: 0.3) {
-      self.layoutIfNeeded()
-    } completion: { _ in
-      self.borderView.alpha = 1
-    }
     
+    UIViewPropertyAnimator.runningPropertyAnimator(
+      withDuration: 0.3,
+      delay: 0,
+      options: []
+    ) { [weak self] in
+      self?.layoutIfNeeded()
+    } completion: { _ in
+      DispatchQueue.main.async {
+        if self.borderView.alpha == 0 {
+          self.borderView.fadeIn()
+          return
+        }
+      }
+    }
+  }
+  
+  func removeBorderView() {
+    DispatchQueue.main.async { [weak self] in
+      self?.borderView.fadeOut()
+    }
   }
 }
 

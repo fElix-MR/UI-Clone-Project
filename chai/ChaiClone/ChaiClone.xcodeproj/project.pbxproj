@@ -14,13 +14,21 @@
 		BDABB25E269DC85900CEA89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDABB25D269DC85900CEA89E /* Assets.xcassets */; };
 		BDABB261269DC85900CEA89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDABB25F269DC85900CEA89E /* LaunchScreen.storyboard */; };
 		BDABB269269DCBAE00CEA89E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB268269DCBAE00CEA89E /* SignUpViewController.swift */; };
-		BDABB26B269DD42A00CEA89E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB26A269DD42A00CEA89E /* InputView.swift */; };
+		BDABB26B269DD42A00CEA89E /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB26A269DD42A00CEA89E /* SignUpInputView.swift */; };
 		BDABB26D269EB94000CEA89E /* SignUpCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB26C269EB94000CEA89E /* SignUpCollectionView.swift */; };
 		BDABB26F269EB97300CEA89E /* SignUpCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB26E269EB97300CEA89E /* SignUpCollectionViewCell.swift */; };
 		BDABB271269ECF8200CEA89E /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB270269ECF8200CEA89E /* ConfirmButton.swift */; };
 		BDABB273269ECFFB00CEA89E /* SignUpScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB272269ECFFB00CEA89E /* SignUpScrollView.swift */; };
 		BDABB275269ED7AF00CEA89E /* SignUpBaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB274269ED7AF00CEA89E /* SignUpBaseTextField.swift */; };
 		BDABB277269EDDC800CEA89E /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB276269EDDC800CEA89E /* BorderView.swift */; };
+		BDABB27A269F284A00CEA89E /* PhoneNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB279269F284A00CEA89E /* PhoneNumberInputView.swift */; };
+		BDABB27C269F34B800CEA89E /* RRNInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB27B269F34B800CEA89E /* RRNInputView.swift */; };
+		BDABB27E269F34D000CEA89E /* CarrierInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB27D269F34D000CEA89E /* CarrierInputView.swift */; };
+		BDABB280269F34E100CEA89E /* NameInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB27F269F34E100CEA89E /* NameInputView.swift */; };
+		BDABB28226A025D900CEA89E /* CarrierSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB28126A025D900CEA89E /* CarrierSelectionViewController.swift */; };
+		BDABB28426A034DA00CEA89E /* CarrierSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB28326A034DA00CEA89E /* CarrierSelectionView.swift */; };
+		BDABB28626A03B4700CEA89E /* CarrierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB28526A03B4700CEA89E /* CarrierTableViewCell.swift */; };
+		BDABB28826A0507F00CEA89E /* SignUpInputViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABB28726A0507F00CEA89E /* SignUpInputViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +41,21 @@
 		BDABB260269DC85900CEA89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDABB262269DC85900CEA89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDABB268269DCBAE00CEA89E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		BDABB26A269DD42A00CEA89E /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		BDABB26A269DD42A00CEA89E /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
 		BDABB26C269EB94000CEA89E /* SignUpCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionView.swift; sourceTree = "<group>"; };
 		BDABB26E269EB97300CEA89E /* SignUpCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDABB270269ECF8200CEA89E /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
 		BDABB272269ECFFB00CEA89E /* SignUpScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScrollView.swift; sourceTree = "<group>"; };
 		BDABB274269ED7AF00CEA89E /* SignUpBaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBaseTextField.swift; sourceTree = "<group>"; };
 		BDABB276269EDDC800CEA89E /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		BDABB279269F284A00CEA89E /* PhoneNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputView.swift; sourceTree = "<group>"; };
+		BDABB27B269F34B800CEA89E /* RRNInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRNInputView.swift; sourceTree = "<group>"; };
+		BDABB27D269F34D000CEA89E /* CarrierInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierInputView.swift; sourceTree = "<group>"; };
+		BDABB27F269F34E100CEA89E /* NameInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInputView.swift; sourceTree = "<group>"; };
+		BDABB28126A025D900CEA89E /* CarrierSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierSelectionViewController.swift; sourceTree = "<group>"; };
+		BDABB28326A034DA00CEA89E /* CarrierSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierSelectionView.swift; sourceTree = "<group>"; };
+		BDABB28526A03B4700CEA89E /* CarrierTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrierTableViewCell.swift; sourceTree = "<group>"; };
+		BDABB28726A0507F00CEA89E /* SignUpInputViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +96,31 @@
 				BDABB25D269DC85900CEA89E /* Assets.xcassets */,
 				BDABB25F269DC85900CEA89E /* LaunchScreen.storyboard */,
 				BDABB262269DC85900CEA89E /* Info.plist */,
-				BDABB26A269DD42A00CEA89E /* InputView.swift */,
+				BDABB278269F283200CEA89E /* InputViews */,
 				BDABB26C269EB94000CEA89E /* SignUpCollectionView.swift */,
 				BDABB26E269EB97300CEA89E /* SignUpCollectionViewCell.swift */,
 				BDABB270269ECF8200CEA89E /* ConfirmButton.swift */,
 				BDABB272269ECFFB00CEA89E /* SignUpScrollView.swift */,
 				BDABB274269ED7AF00CEA89E /* SignUpBaseTextField.swift */,
 				BDABB276269EDDC800CEA89E /* BorderView.swift */,
+				BDABB28126A025D900CEA89E /* CarrierSelectionViewController.swift */,
+				BDABB28326A034DA00CEA89E /* CarrierSelectionView.swift */,
+				BDABB28526A03B4700CEA89E /* CarrierTableViewCell.swift */,
+				BDABB28726A0507F00CEA89E /* SignUpInputViewType.swift */,
 			);
 			path = ChaiClone;
+			sourceTree = "<group>";
+		};
+		BDABB278269F283200CEA89E /* InputViews */ = {
+			isa = PBXGroup;
+			children = (
+				BDABB26A269DD42A00CEA89E /* SignUpInputView.swift */,
+				BDABB279269F284A00CEA89E /* PhoneNumberInputView.swift */,
+				BDABB27B269F34B800CEA89E /* RRNInputView.swift */,
+				BDABB27D269F34D000CEA89E /* CarrierInputView.swift */,
+				BDABB27F269F34E100CEA89E /* NameInputView.swift */,
+			);
+			path = InputViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,15 +195,23 @@
 			files = (
 				BDABB273269ECFFB00CEA89E /* SignUpScrollView.swift in Sources */,
 				BDABB271269ECF8200CEA89E /* ConfirmButton.swift in Sources */,
+				BDABB27E269F34D000CEA89E /* CarrierInputView.swift in Sources */,
 				BDABB275269ED7AF00CEA89E /* SignUpBaseTextField.swift in Sources */,
+				BDABB28826A0507F00CEA89E /* SignUpInputViewType.swift in Sources */,
 				BDABB259269DC85500CEA89E /* MainViewController.swift in Sources */,
+				BDABB280269F34E100CEA89E /* NameInputView.swift in Sources */,
+				BDABB28626A03B4700CEA89E /* CarrierTableViewCell.swift in Sources */,
 				BDABB255269DC85500CEA89E /* AppDelegate.swift in Sources */,
 				BDABB26D269EB94000CEA89E /* SignUpCollectionView.swift in Sources */,
 				BDABB277269EDDC800CEA89E /* BorderView.swift in Sources */,
-				BDABB26B269DD42A00CEA89E /* InputView.swift in Sources */,
+				BDABB26B269DD42A00CEA89E /* SignUpInputView.swift in Sources */,
 				BDABB26F269EB97300CEA89E /* SignUpCollectionViewCell.swift in Sources */,
+				BDABB27C269F34B800CEA89E /* RRNInputView.swift in Sources */,
+				BDABB28226A025D900CEA89E /* CarrierSelectionViewController.swift in Sources */,
 				BDABB269269DCBAE00CEA89E /* SignUpViewController.swift in Sources */,
 				BDABB257269DC85500CEA89E /* SceneDelegate.swift in Sources */,
+				BDABB27A269F284A00CEA89E /* PhoneNumberInputView.swift in Sources */,
+				BDABB28426A034DA00CEA89E /* CarrierSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

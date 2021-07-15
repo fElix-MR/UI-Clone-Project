@@ -19,11 +19,11 @@ final class SignUpScrollView: UIScrollView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super.touchesBegan(touches, with: event)
-    
-    endEditing(true)
-  }
+//  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    super.touchesBegan(touches, with: event)
+//    
+//    endEditing(true)
+//  }
 }
 
 private extension SignUpScrollView {

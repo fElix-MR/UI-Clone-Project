@@ -34,18 +34,16 @@ final class SignUpViewController: UIViewController {
     setupView()
     setupConstraints()
     setupNotification()
-    
-    DispatchQueue.main.async {
-      self.addButtonTapped()
-      self.addButtonTapped()
-      self.addButtonTapped()
-    }
+  }
+  
+  deinit {
+    print("deinit")
   }
 }
 
 private extension SignUpViewController {
   
-  @objc func addButtonTapped() {
+  func next() {
     DispatchQueue.main.async {
       self.count += 1
       self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
@@ -64,11 +62,7 @@ private extension SignUpViewController {
   func setupView() {
     view.backgroundColor = .white
     
-    navigationController?.navigationBar.isHidden = true
-    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(addButtonTapped))
-    
     collectionView.dataSource = self
-//    collectionView.delegate = self
     
     titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .black)
     titleLabel.numberOfLines = 0
@@ -120,28 +114,34 @@ private extension SignUpViewController {
     let keyboardSize = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
     let keyboardHeight = keyboardSize.cgRectValue.height
     button.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
-    
-//    c.constant += keyboardHeight
-    
+    button.layer.cornerRadius = 0
     NSLayoutConstraint.deactivate(keyboardHideConstraint)
     NSLayoutConstraint.activate(keyboardShowConstraint)
     
-    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: []) {
-      self.button.layer.cornerRadius = 0
-      self.view.layoutIfNeeded()
+    UIViewPropertyAnimator.runningPropertyAnimator(
+      withDuration: 0.3,
+      delay: 0,
+      options: []
+    ) { [weak self] in
+      self?.view.layoutIfNeeded()
     }
-
   }
   
   @objc func keyboardWillHide(_ notification: NSNotification) {
+    button.transform = .identity
+    button.layer.cornerRadius = 30
     NSLayoutConstraint.deactivate(keyboardShowConstraint)
     NSLayoutConstraint.activate(keyboardHideConstraint)
-    button.transform = .identity
     
-    UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: []) {
-      self.button.layer.cornerRadius = 30
-      self.view.layoutIfNeeded()
+    UIViewPropertyAnimator.runningPropertyAnimator(
+      withDuration: 0.3,
+      delay: 0,
+      options: []
+    ) { [weak self] in
+      self?.view.layoutIfNeeded()
     }
+    
+    collectionView.removeBorderView()
   }
 }
 
@@ -156,6 +156,18 @@ extension SignUpViewController: UICollectionViewDataSource {
     
     cell.delegate = self
     
+    if count == 1 {
+      cell.signUpInputViewType = .phoneNumber
+    } else if count == 2 {
+      cell.signUpInputViewType = .rrn
+    } else if count == 3 {
+      cell.signUpInputViewType = .carrier
+    } else {
+      cell.signUpInputViewType = .name
+    }
+    
+    cell.setFirstResponder()
+    
     return cell
   }
 }
@@ -163,11 +175,23 @@ extension SignUpViewController: UICollectionViewDataSource {
 extension SignUpViewController: SignUpCollectionViewCellDelegate {
   
   func selcted(_ sender: SignUpCollectionViewCell, frame: CGRect) {
-    collectionView.moveBorderView(to: frame)
-    
-    DispatchQueue.main.async {
-      self.scrollView.setContentOffset(CGPoint(x: frame.origin.x, y: frame.origin.y - 100), animated: true)
+    DispatchQueue.main.async { [weak self] in
+      self?.view.layoutIfNeeded()
+      self?.scrollView.setContentOffset(CGPoint(x: frame.origin.x, y: frame.origin.y - 100), animated: true)
+      self?.collectionView.moveBorderView(to: frame)
     }
     
+    if sender.signUpInputViewType == .carrier {
+      let carrierSelectionViewController = CarrierSelectionViewController()
+      if let carrierInputView = sender.signUpInputView as? CarrierInputView {
+        carrierSelectionViewController.delegate = carrierInputView
+      }
+      present(carrierSelectionViewController, animated: true, completion: nil)
+      view.endEditing(true)
+    }
+  }
+  
+  func completed(_ sender: SignUpCollectionViewCell) {
+    next()
   }
 }
