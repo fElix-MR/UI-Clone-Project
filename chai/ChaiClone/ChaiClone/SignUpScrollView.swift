@@ -32,5 +32,6 @@ private extension SignUpScrollView {
     bounces = true
     backgroundColor = .systemGray6
     showsHorizontalScrollIndicator = false
+    setNeedsLayout()
   }
 }

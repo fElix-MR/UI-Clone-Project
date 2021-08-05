@@ -49,9 +49,6 @@ private extension SignUpViewController {
       self.collectionView.insertItems(at: [IndexPath(row: 0, section: 0)])
       
       self.collectionView.performBatchUpdates(nil) { _ in
-        UIView.animate(withDuration: 0.3) {
-          self.view.layoutIfNeeded()
-        }
         if self.count == 4 {
           self.button.isHidden = false
         }
@@ -67,6 +64,8 @@ private extension SignUpViewController {
     titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .black)
     titleLabel.numberOfLines = 0
     titleLabel.text = "휴대폰번호를\n입력해주세요"
+    
+    button.isHidden = true
   }
   
   func setupConstraints() {
