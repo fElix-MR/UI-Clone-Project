@@ -12,7 +12,6 @@ import RxCocoa
 final class ViewController: UIViewController {
   
   private let itemSize = 10000
-  private var displayLinkProxy: CADisplayLinkProxy?
   private var disposeBag = DisposeBag()
   
   private let infiniteCarousel = InfiniteCarouselCollectionView(frame: .zero,
@@ -47,10 +46,6 @@ private extension ViewController {
       InfiniteCarouselCollectionViewCell.self,
       forCellWithReuseIdentifier: "InfiniteCarouselCollectionViewCell"
     )
-    
-    displayLinkProxy = CADisplayLinkProxy { [weak self] in
-//      self?.step()
-    }
   }
   
   func setupConstraints() {
@@ -110,31 +105,5 @@ extension ViewController: UICollectionViewDataSource {
     cell.updateViewBackground(with: UIColor(red: red, green: green, blue: blue, alpha: 1))
     
     return cell
-  }
-}
-
-
-class CADisplayLinkProxy {
-  
-  var displaylink: CADisplayLink?
-  var handle: (() -> Void)?
-  
-  init(handle: (() -> Void)?) {
-    self.handle = handle
-    displaylink = CADisplayLink(target: self, selector: #selector(updateHandle))
-    displaylink?.add(to: RunLoop.current, forMode: .common)
-    
-  }
-  
-  @objc func updateHandle() {
-    handle?()
-//    print(displaylink?.timestamp)
-    print(displaylink!.targetTimestamp - displaylink!.timestamp)
-  }
-  
-  func invalidate() {
-    displaylink?.remove(from: RunLoop.current, forMode: .common)
-    displaylink?.invalidate()
-    displaylink = nil
   }
 }
